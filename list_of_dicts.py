@@ -17,7 +17,7 @@
 
 
 def remove_duplicates(lst: list) -> list:
-    return list({str(map_obj): map_obj for map_obj in lst}.values())
+    return list({frozenset(map_obj.items()): map_obj for map_obj in lst}.values())
 
 
 lst_of_dicts = [
